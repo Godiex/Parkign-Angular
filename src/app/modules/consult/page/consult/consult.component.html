@@ -1,0 +1,27 @@
+<h3 style="text-align: center;">Consulta salidas</h3>
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+          <th scope="col">Tipo de Vehiculo</th>
+          <th scope="col">Placa</th>
+          <th scope="col">Fecha Entrada</th>
+          <th scope="col">Fecha Salida</th>
+          <th scope="col">Valor Total</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of parkingInvoiceMade; index as i">
+          <td>
+            
+            {{ item.type }}
+          </td>
+          <td>{{ item.plaque }}</td>
+          <td>{{ item.entryDate | date: "medium" }}</td>
+          <td>{{ item.deapertureDate | date: "medium" }}</td>
+          <td>{{ item.totalValue | number }}</td>
+        </tr>
+        </tbody>
+      </table>
+
+</div>

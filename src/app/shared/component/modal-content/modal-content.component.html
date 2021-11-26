@@ -1,0 +1,63 @@
+<div class="modal-header">
+  <h4 class="modal-title">Detalle celda</h4>
+  <button
+    type="button"
+    class="close"
+    aria-label="Close"
+    (click)="activeModal.dismiss('Cross click')"
+  >
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div *ngIf="parkingInvoiceDetail != undefined" class="modal-body">
+  <h4 style="text-align: left; font-size: 1rem">Rango fecha parqueo</h4>
+  <h6  style="font-weight: lighter; font-size: 1rem">
+    Fecha entrada: {{ parkingInvoiceDetail.entryDate | date: "medium" }}
+  </h6>
+  <h6 style="font-weight: lighter; font-size: 1rem">
+    Fecha actual: {{ fechaActual | date: "medium" }}
+  </h6>
+  <h4 style="text-align: left; font-size: 1rem">Datos vehiculo</h4>
+
+  <div style="display: grid; grid-template-columns: repeat(3, 1fr);column-gap: 0.5rem;">
+    <h5 style="font-weight: lighter; font-size: 1rem">
+      Cilindraje: {{ parkingInvoiceDetail.vehicleDto.cylinders }}
+    </h5>
+
+    <h5 style="font-weight: lighter; font-size: 1rem">
+      Placa: {{ parkingInvoiceDetail.vehicleDto.plaque }}
+    </h5>
+    <h5 style="font-weight: lighter; font-size: 1rem">
+      Tipo: {{ parkingInvoiceDetail.vehicleDto.type }}
+    </h5>
+  </div>
+  <h4 style="text-align: left; font-size: 1rem">Valores de pago</h4>
+  <div style="display: grid; grid-template-columns: repeat(3, 1fr);column-gap: 0.5rem;">
+    <h5 style="font-weight: lighter;font-size: 1rem;">
+      Valor sobrecargo: {{ parkingInvoiceDetail.surchangeValue }}
+    </h5>
+
+    <h5 style="font-weight: lighter;font-size: 1rem;">
+      Subtotal: {{ parkingInvoiceDetail.subtotal }}
+    </h5>
+    <h5 style="font-size: 1rem; font-weight: bold;">
+      Valor Total: {{ parkingInvoiceDetail.totalValue }}
+    </h5>
+  </div>
+  <button
+    type="button"
+    class="btn btn-outline-dark"
+    (click)="changeStateCell()"
+  >
+    Sacar del parqueadero
+  </button>
+</div>
+<div class="modal-footer">
+  <button
+    type="button"
+    class="btn btn-outline-dark"
+    (click)="activeModal.close('Close click')"
+  >
+    Cerrar
+  </button>
+</div>

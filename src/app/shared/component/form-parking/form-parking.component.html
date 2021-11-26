@@ -1,0 +1,33 @@
+<form [formGroup]="registerParkingForm" (ngSubmit)="onSubmit()" class="form-style container-fluid">
+    <div class="mb-2" class="form-group ">
+      <input type="text" class="form-control" formControlName="plaque" id="placaId"
+        [ngClass]="{ 'is-invalid': submitted && f.plaque.errors}" placeholder="Placa" aria-describedby="emailHelp">
+      <div *ngIf="submitted && f.plaque.errors" class="invalid-feedback">
+        <div *ngIf="f.plaque.errors?.required">La placa es requerida</div>
+      </div>
+    </div>
+    <div class="mb-2 button-div" class="form-group ">
+      <input type="number" class="form-control" formControlName="cylinders" id="cilindrajeId"
+        [ngClass]="{ 'is-invalid': submitted && f.cylinders.errors}" aria-describedby="emailHelp"
+        placeholder="Cilindraje">
+        <div *ngIf="submitted && f.cylinders.errors" class="invalid-feedback">
+            <div *ngIf="f.cylinders.errors?.required">El cilindraje es requerido</div>
+          </div>
+    </div>
+    
+    <div class="mb-2" class="form-group ">
+      <select class="form-select" aria-label="Default select example " formControlName="type"
+        [ngClass]="{ 'is-invalid': submitted && f.type.errors}">
+       
+        <option value=null selected>Tipo vehiculo</option>
+        <option value="2">Motocicleta</option>
+        <option value="1">Carro</option>
+      </select>
+      <div *ngIf="submitted && f.type.errors" class="invalid-feedback">
+        <div *ngIf="f.type.errors?.required">El tipo es requerido</div>
+      </div>
+    </div>
+    <div class="button-div">
+      <button type="submit" class="btn btn-success">Registrar</button>
+    </div>
+  </form>

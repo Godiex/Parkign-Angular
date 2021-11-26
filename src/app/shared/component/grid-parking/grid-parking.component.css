@@ -1,0 +1,17 @@
+.grid-parking-style {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  column-gap: 0.5rem;
+  height: 500px;
+  width: 65vw;
+  overflow-y: scroll;
+}
+
+@media (max-width: 994px){
+  .grid-parking-style {
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+}

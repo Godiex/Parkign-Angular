@@ -1,0 +1,49 @@
+.card-style {
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  min-width: 110px;
+  min-height: 120px;
+  border-radius: 5%;
+  margin-bottom: 0.5rem;
+}
+.card-content-style {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+.card-head-style {
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  align-items: center;
+}
+
+.icon-check-style-free {
+  color: green;
+}
+.icon-check-style-busy {
+  color: red;
+}
+
+.icon-type-vehicle-style {
+  width: 30px;
+  height: 30px;
+}
+
+.card-content-style {
+  padding: 0 2px;
+}
+
+.card-head-style h4 {
+  font-size: 1rem;
+}
+
+.busy-content-style {
+  display: flex;
+  justify-content: space-between;
+}
+.card-style:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}

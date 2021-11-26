@@ -1,0 +1,15 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Registrar ingreso</h4>
+          <app-form-parking (newItemEvent)="updateCells($event)"></app-form-parking>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-9">
+      <app-grid-parking [celdasVehiculos]="cellVehicles"></app-grid-parking>
+    </div>
+  </div>
+</div>
